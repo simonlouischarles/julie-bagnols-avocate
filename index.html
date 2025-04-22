@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Julie Bagnols – Avocate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --terracotta: #ba5548;
+      --cream: #f9f2e6;
+      --gray-light: #eeeeee;
+      --text-dark: #2a2a2a;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header img {
+      max-width: 120px;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      font-weight: 600;
+      color: var(--terracotta);
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 1em;
+      color: #444;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: var(--terracotta);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: var(--terracotta);
+      color: white;
+      font-size: 0.9em;
+    }
+
+    .honoraires p strong {
+      color: var(--terracotta);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Julie Bagnols Logo" />
+    <h1>Julie Bagnols</h1>
+    <p>Avocate en droit social</p>
+  </header>
+
+  <section class="visible">
+    <h2>Présentation</h2>
+    <p>Le droit social a toujours été une évidence pour moi car il constitue un droit à la fois humain et technique. Mon sens du détail vous apportera une défense de qualité.</p>
+  </section>
+
+  <section>
+    <h2>Compétences</h2>
+    <ul>
+      <li>Droit du travail (licenciement, harcèlement, contrat)</li>
+      <li>Droit de la protection sociale (URSSAF, retraite, maladie)</li>
+      <li>Accompagnement salariés et entreprises</li>
+    </ul>
+  </section>
+
+  <section class="honoraires">
+    <h2>Honoraires</h2>
+    <p><strong>200€ / heure</strong> pour les prestations de conseil</p>
+    <p><strong>Forfaits sur devis</strong> pour les contentieux</p>
+  </section>
+
+  <section>
+    <h2>Parcours</h2>
+    <ul>
+      <li>CAPA – Barreau de Paris (2022)</li>
+      <li>Master 2 Droit des relations de travail – Aix (2017)</li>
+      <li>Master 2 Droit de la protection sociale – Paris Descartes (2018)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Email : contact@juliebagnols-avocate.fr</p>
+    <p>Téléphone : 06 12 34 56 78</p>
+    <p>Cabinet basé à Paris – Consultations en présentiel ou à distance</p>
+  </section>
+
+  <footer>
+    Mentions légales – Julie Bagnols Avocate – Paris
+  </footer>
+
+  <script>
+    // Animation lors du scroll
+    const sections = document.querySelectorAll('section');
+    const options = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
